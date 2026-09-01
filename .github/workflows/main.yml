@@ -1,0 +1,16 @@
+name: Mera Pehla CI CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Code pull karo
+      uses: actions/checkout@v4
+
+    - name: Test Message Run Karo
+      run: echo "Hello Bhai, CI/CD Pipeline successful ho gayi!"
