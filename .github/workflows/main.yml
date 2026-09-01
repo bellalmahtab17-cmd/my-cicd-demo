@@ -1,16 +1,19 @@
-name: Mera Pehla CI CD Pipeline
+name: Docker CI Pipeline
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-run:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Code pull karo
+    - name: Code Pull Karo
       uses: actions/checkout@v4
 
-    - name: Test Message Run Karo
-      run: echo "Hello Bhai, CI/CD Pipeline successful ho gayi!"
+    - name: Docker Image Build Karo
+      run: docker build -t my-demo-app .
+
+    - name: Docker Container Run Karo
+      run: docker run my-demo-app
